@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 6%;
+    --foreground: 180 10% 94%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 180 10% 94%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 180 10% 94%;
+
+    --primary: 168 84% 38%;
+    --primary-foreground: 220 30% 6%;
+
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 220 30% 6%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 220 30% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 168 84% 38%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --glow-primary: 168 84% 38%;
+    --glow-secondary: 160 84% 39%;
+    --gradient-start: 168 84% 38%;
+    --gradient-end: 160 84% 39%;
+    
+    /* Code colors */
+    --code-bg: 220 25% 8%;
+    --code-border: 220 20% 20%;
+    --code-keyword: 168 84% 50%;
+    --code-string: 160 84% 50%;
+    --code-comment: 220 10% 45%;
+  }
+
+  .dark {
+    --background: 220 30% 6%;
+    --foreground: 180 10% 94%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 180 10% 94%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 180 10% 94%;
+
+    --primary: 168 84% 38%;
+    --primary-foreground: 220 30% 6%;
+
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 220 30% 6%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 220 30% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 168 84% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3),
+                0 0 40px hsl(var(--glow-primary) / 0.1);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 20px hsl(var(--glow-secondary) / 0.3),
+                0 0 40px hsl(var(--glow-secondary) / 0.1);
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .code-block {
+    @apply bg-[hsl(var(--code-bg))] border border-[hsl(var(--code-border))] rounded-lg font-mono text-sm;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 12px hsl(var(--primary) / 0.8);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes lightning {
+    0%, 100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);
+    }
+    50% {
+      opacity: 0.7;
+      filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 16px currentColor);
+    }
+  }
+
+  .lightning-effect {
+    animation: lightning 0.5s ease-in-out infinite;
+  }
+
+  .track-glow-red {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5),
+                0 0 20px rgba(239, 68, 68, 0.3),
+                inset 0 0 10px rgba(239, 68, 68, 0.2);
+  }
+
+  .track-glow-green {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5),
+                0 0 20px hsl(var(--primary) / 0.3),
+                inset 0 0 10px hsl(var(--primary) / 0.2);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Calendly Widget Styling */
+.calendly-inline-widget {
+  @apply rounded-lg overflow-hidden;
+  background: transparent !important;
+}
+
+.calendly-inline-widget iframe {
+  background: hsl(var(--card) / 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Hide Calendly branding */
+.calendly-badge-wrapper,
+.calendly-badge-wrapper * {
+  display: none !important;
+}
+
+/* Custom scrollbar for Calendly iframe */
+.calendly-inline-widget iframe::-webkit-scrollbar {
+  width: 8px;
+}
+
+.calendly-inline-widget iframe::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+.calendly-inline-widget iframe::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+.calendly-inline-widget iframe::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
