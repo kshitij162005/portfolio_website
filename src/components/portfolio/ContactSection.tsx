@@ -101,28 +101,28 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
             <span className="text-gradient">Let's Connect</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             Interested in working together? Schedule a call or send me a message.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto">
           {/* Calendly Embed */}
           <div className="glass rounded-xl overflow-hidden border border-border/50">
-            <div className="p-6 pb-4 border-b border-border/30">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-primary" />
+            <div className="p-4 sm:p-6 pb-3 sm:pb-4 border-b border-border/30">
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Schedule a Call</h3>
-                  <p className="text-xs text-muted-foreground">Pick a time that works for you</p>
+                  <h3 className="font-semibold text-sm sm:text-base">Schedule a Call</h3>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">Pick a time that works for you</p>
                 </div>
               </div>
             </div>
@@ -134,29 +134,29 @@ export function ContactSection() {
                 data-url="https://calendly.com/kotechakshitij/call-with-kshitij"
                 style={{ 
                   minWidth: '100%', 
-                  height: '500px'
+                  height: '450px'
                 }}
               />
             </div>
           </div>
 
           {/* Send Message Form */}
-          <div className="glass rounded-xl p-6 flex flex-col border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
-                <Mail className="w-5 h-5 text-secondary" />
+          <div className="glass rounded-xl p-4 sm:p-6 flex flex-col border border-border/50">
+            <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" />
               </div>
               <div>
-                <h3 className="font-semibold">Send a Message</h3>
-                <p className="text-xs text-muted-foreground">I'll respond within 24 hours</p>
+                <h3 className="font-semibold text-sm sm:text-base">Send a Message</h3>
+                <p className="text-[10px] sm:text-xs text-muted-foreground">I'll respond within 24 hours</p>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="flex-1 flex flex-col space-y-4">
+            <form onSubmit={handleSubmit} className="flex-1 flex flex-col space-y-3 sm:space-y-4">
               {/* Name Field */}
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm text-muted-foreground flex items-center gap-2">
-                  <User className="w-3.5 h-3.5" />
+              <div className="space-y-1.5 sm:space-y-2">
+                <Label htmlFor="name" className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2">
+                  <User className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   Your Name
                 </Label>
                 <Input
@@ -167,14 +167,14 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors"
+                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors text-sm h-9 sm:h-10"
                 />
               </div>
 
               {/* Email Field */}
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm text-muted-foreground flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5" />
+              <div className="space-y-1.5 sm:space-y-2">
+                <Label htmlFor="email" className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2">
+                  <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   Email Address
                 </Label>
                 <Input
@@ -185,14 +185,14 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors"
+                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors text-sm h-9 sm:h-10"
                 />
               </div>
 
               {/* Subject Field */}
-              <div className="space-y-2">
-                <Label htmlFor="subject" className="text-sm text-muted-foreground flex items-center gap-2">
-                  <MessageSquare className="w-3.5 h-3.5" />
+              <div className="space-y-1.5 sm:space-y-2">
+                <Label htmlFor="subject" className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2">
+                  <MessageSquare className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   Subject
                 </Label>
                 <Input
@@ -203,14 +203,14 @@ export function ContactSection() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors"
+                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors text-sm h-9 sm:h-10"
                 />
               </div>
 
               {/* Message Field */}
-              <div className="space-y-2 flex-1">
-                <Label htmlFor="message" className="text-sm text-muted-foreground flex items-center gap-2">
-                  <Send className="w-3.5 h-3.5" />
+              <div className="space-y-1.5 sm:space-y-2 flex-1">
+                <Label htmlFor="message" className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2">
+                  <Send className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   Message
                 </Label>
                 <Textarea
@@ -220,21 +220,21 @@ export function ContactSection() {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors min-h-[120px] resize-none"
+                  className="bg-muted/30 border-border/50 focus:border-primary/50 transition-colors min-h-[100px] sm:min-h-[120px] resize-none text-sm"
                 />
               </div>
 
               {/* Status Messages */}
               {submitStatus === "success" && (
-                <div className="flex items-center gap-2 text-sm text-green-500 bg-green-500/10 p-3 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
-                  <CheckCircle className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-green-500 bg-green-500/10 p-2.5 sm:p-3 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
+                  <CheckCircle className="w-4 h-4 flex-shrink-0" />
                   <span>Message sent successfully! I'll get back to you soon.</span>
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="flex items-center gap-2 text-sm text-destructive bg-destructive/10 p-3 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
-                  <AlertCircle className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-destructive bg-destructive/10 p-2.5 sm:p-3 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
+                  <AlertCircle className="w-4 h-4 flex-shrink-0" />
                   <span>{errorMessage}</span>
                 </div>
               )}
@@ -243,7 +243,7 @@ export function ContactSection() {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full mt-auto"
+                className="w-full mt-auto h-10 sm:h-11 text-sm sm:text-base"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -263,9 +263,9 @@ export function ContactSection() {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-border text-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Kshitij Kotecha. Built with React & TypeScript.
+        <div className="mt-12 sm:mt-16 lg:mt-20 pt-6 sm:pt-8 border-t border-border text-center">
+          <p className="text-xs sm:text-sm text-muted-foreground">
+            Built with ♥️ by Kshitij Kotecha © {new Date().getFullYear()}
           </p>
         </div>
       </div>

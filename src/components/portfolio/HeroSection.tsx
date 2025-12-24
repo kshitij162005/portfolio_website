@@ -88,42 +88,42 @@ export function HeroSection() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 pt-16 sm:pt-8 lg:pt-0">
         {/* Terminal-style intro */}
-        <div className="code-block p-4 mb-8 max-w-2xl opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-3 h-3 rounded-full bg-destructive/70" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-            <div className="w-3 h-3 rounded-full bg-green-500/70" />
-            <span className="text-muted-foreground text-xs ml-2 font-mono">~/kshitij-portfolio</span>
+        <div className="code-block p-3 sm:p-4 mb-6 sm:mb-8 max-w-2xl opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="flex items-center gap-2 mb-2 sm:mb-3">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-destructive/70" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/70" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/70" />
+            <span className="text-muted-foreground text-[10px] sm:text-xs ml-2 font-mono">~/kshitij-portfolio</span>
           </div>
-          <div className="font-mono text-sm">
+          <div className="font-mono text-xs sm:text-sm">
             <span className="text-primary">$</span>{" "}
             <span className="text-muted-foreground">whoami</span>
           </div>
         </div>
 
         {/* Main content - Two column layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           {/* Left Column - Main Info */}
-          <div className="space-y-6">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+          <div className="space-y-4 sm:space-y-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
             <span className="text-foreground">Kshitij</span>{" "}
             <span className="text-gradient">Kotecha</span>
           </h1>
 
           {/* Current Position */}
-          <div className="glass rounded-lg px-5 py-3.5 inline-flex items-center gap-3 border border-primary/30 hover:border-primary/50 transition-colors">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0">
-              <Briefcase className="w-4 h-4 text-primary" />
+          <div className="glass rounded-lg px-3 sm:px-5 py-3 sm:py-3.5 inline-flex items-center gap-2.5 sm:gap-3 border border-primary/30 hover:border-primary/50 transition-colors">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0">
+              <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
             </div>
             <div className="flex flex-col gap-1.5">
               <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2.5">
-                <span className="text-sm font-semibold text-foreground">
+                <span className="text-xs sm:text-sm font-semibold text-foreground">
                   Backend Engineer Intern
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <span className="text-xs text-muted-foreground flex items-center gap-1.5">
+                  <span className="text-[10px] sm:text-xs text-muted-foreground flex items-center gap-1.5">
                     <span className="hidden sm:inline text-primary/70">@</span>
                     <span>Rolling Arrays</span>
                     <span className="hidden sm:inline text-muted-foreground/50">·</span>
@@ -145,7 +145,7 @@ export function HeroSection() {
                   </Badge>
                 </span>
               </div>
-              <div className="text-xs text-muted-foreground flex items-center gap-1.5">
+              <div className="text-[10px] sm:text-xs text-muted-foreground flex items-center gap-1.5">
                 <span className="text-primary/70 font-medium">May 2025</span>
                 <span className="text-muted-foreground/50">—</span>
                 <span className="text-primary font-medium">Present</span>
@@ -153,39 +153,39 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="h-12 flex items-center">
-            <Terminal className="w-5 h-5 text-primary mr-3" />
-            <span className="text-xl sm:text-2xl font-mono text-muted-foreground">
+          <div className="h-10 sm:h-12 flex items-center">
+            <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-2 sm:mr-3 flex-shrink-0" />
+            <span className="text-base sm:text-xl md:text-2xl font-mono text-muted-foreground truncate">
               {displayText}
               <span className="border-r-2 border-primary animate-blink ml-1">&nbsp;</span>
             </span>
           </div>
 
           {/* Key stats */}
-          <div className="flex flex-wrap gap-6 pt-4">
-            <div className="glass rounded-lg px-4 py-3">
-              <div className="text-2xl font-bold text-gradient">10K+</div>
-              <div className="text-xs text-muted-foreground">Daily Transactions</div>
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-4 lg:gap-6 pt-2 sm:pt-4">
+            <div className="glass rounded-lg px-3 sm:px-4 py-2.5 sm:py-3">
+              <div className="text-xl sm:text-2xl font-bold text-gradient">10K+</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground">Daily Transactions</div>
             </div>
-            <div className="glass rounded-lg px-4 py-3">
-              <div className="text-2xl font-bold text-gradient">30%</div>
-              <div className="text-xs text-muted-foreground">Response Time Reduced</div>
+            <div className="glass rounded-lg px-3 sm:px-4 py-2.5 sm:py-3">
+              <div className="text-xl sm:text-2xl font-bold text-gradient">30%</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground">Response Time Reduced</div>
             </div>
-            <div className="glass rounded-lg px-4 py-3">
-              <div className="text-2xl font-bold text-gradient">99.9%</div>
-              <div className="text-xs text-muted-foreground">Data Integrity</div>
+            <div className="glass rounded-lg px-3 sm:px-4 py-2.5 sm:py-3">
+              <div className="text-xl sm:text-2xl font-bold text-gradient">99.9%</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground">Data Integrity</div>
             </div>
-            <div className="glass rounded-lg px-4 py-3">
-              <div className="text-2xl font-bold text-gradient">85%</div>
-              <div className="text-xs text-muted-foreground">Query Time Reduced</div>
+            <div className="glass rounded-lg px-3 sm:px-4 py-2.5 sm:py-3">
+              <div className="text-xl sm:text-2xl font-bold text-gradient">85%</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground">Query Time Reduced</div>
             </div>
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-4 pt-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
             <Button 
               size="lg" 
-              className="glow-primary"
+              className="glow-primary w-full sm:w-auto"
               onClick={() => scrollToSection("projects")}
             >
               View Projects
@@ -193,6 +193,7 @@ export function HeroSection() {
             <Button 
               size="lg" 
               variant="outline"
+              className="w-full sm:w-auto"
               onClick={() => scrollToSection("contact")}
             >
               Schedule a Call
@@ -200,7 +201,7 @@ export function HeroSection() {
           </div>
 
           {/* Social links */}
-          <div className="flex items-center gap-4 pt-4">
+          <div className="flex items-center gap-4 pt-2 sm:pt-4">
             <a 
               href="https://github.com/kshitij162005" 
               target="_blank" 
@@ -227,22 +228,22 @@ export function HeroSection() {
           </div>
 
           {/* Right Column - Speed Test & Availability */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 mt-4 lg:mt-0">
             {/* Open to New Positions Badge */}
-            <div className="glass rounded-xl p-5 border border-secondary/30 hover:border-secondary/50 transition-colors">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-secondary" />
+            <div className="glass rounded-xl p-4 sm:p-5 border border-secondary/30 hover:border-secondary/50 transition-colors">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm">Availability</h3>
-                    <p className="text-xs text-muted-foreground">Open to new opportunities</p>
+                    <h3 className="font-semibold text-xs sm:text-sm">Availability</h3>
+                    <p className="text-[10px] sm:text-xs text-muted-foreground">Open to new opportunities</p>
                   </div>
                 </div>
                 <Badge 
                   variant="outline" 
-                  className="border-secondary/50 bg-secondary/10 text-secondary text-xs px-3 py-1"
+                  className="border-secondary/50 bg-secondary/10 text-secondary text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 flex-shrink-0"
                 >
                   Available
                 </Badge>
@@ -250,15 +251,15 @@ export function HeroSection() {
             </div>
 
             {/* Redis vs SQL Speed Test */}
-            <div className="glass rounded-xl p-5 border border-border/50">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                    <Database className="w-5 h-5 text-primary" />
+            <div className="glass rounded-xl p-4 sm:p-5 border border-border/50">
+              <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2">
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Database className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm">Backend Speed Test</h3>
-                    <p className="text-xs text-muted-foreground">Redis vs SQL Race</p>
+                    <h3 className="font-semibold text-xs sm:text-sm">Backend Speed Test</h3>
+                    <p className="text-[10px] sm:text-xs text-muted-foreground">Redis vs SQL Race</p>
                   </div>
                 </div>
                 <Button
@@ -266,7 +267,7 @@ export function HeroSection() {
                   disabled={isRunning}
                   size="sm"
                   variant="outline"
-                  className="border-primary/50 hover:bg-primary/10 hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all"
+                  className="border-primary/50 hover:bg-primary/10 hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all text-xs px-2 sm:px-3 flex-shrink-0"
                 >
                   <Zap className="w-3 h-3 mr-1.5" />
                   {isRunning ? 'Racing...' : 'Play'}
@@ -274,23 +275,23 @@ export function HeroSection() {
               </div>
 
               {/* Race Track */}
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* SQL Track - Green */}
                 <div className="relative">
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between mb-1.5 sm:mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-semibold text-primary">SQL</span>
+                      <span className="text-[10px] sm:text-xs font-semibold text-primary">SQL</span>
                       {isRunning && sqlTime < 100 && (
                         <div className="relative lightning-effect">
-                          <Zap className="w-4 h-4 text-primary" />
+                          <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                         </div>
                       )}
                     </div>
-                    <span className="text-xs font-mono text-primary font-medium">
+                    <span className="text-[10px] sm:text-xs font-mono text-primary font-medium">
                       {sqlTime > 0 ? `${(120 * (sqlTime / 100)).toFixed(0)}ms` : '0ms'}
                     </span>
                   </div>
-                  <div className="relative h-4 bg-muted/50 rounded-full overflow-hidden border border-border/30">
+                  <div className="relative h-3 sm:h-4 bg-muted/50 rounded-full overflow-hidden border border-border/30">
                     <div 
                       className={`absolute left-0 top-0 h-full bg-gradient-to-r from-primary via-secondary to-primary rounded-full transition-all duration-100 ease-out track-glow-green`}
                       style={{ width: `${sqlTime}%` }}
@@ -305,20 +306,20 @@ export function HeroSection() {
 
                 {/* Redis Track - Red */}
                 <div className="relative">
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between mb-1.5 sm:mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-semibold text-red-400">Redis</span>
+                      <span className="text-[10px] sm:text-xs font-semibold text-red-400">Redis</span>
                       {isRunning && redisTime < 100 && (
                         <div className="relative lightning-effect">
-                          <Zap className="w-4 h-4 text-red-500" />
+                          <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
                         </div>
                       )}
                     </div>
-                    <span className="text-xs font-mono text-red-400 font-semibold">
+                    <span className="text-[10px] sm:text-xs font-mono text-red-400 font-semibold">
                       {redisTime > 0 ? `${(15 * (redisTime / 100)).toFixed(1)}ms` : '0ms'}
                     </span>
                   </div>
-                  <div className="relative h-4 bg-muted/50 rounded-full overflow-hidden border border-border/30">
+                  <div className="relative h-3 sm:h-4 bg-muted/50 rounded-full overflow-hidden border border-border/30">
                     <div 
                       className={`absolute left-0 top-0 h-full bg-gradient-to-r from-red-600 via-red-500 to-red-400 rounded-full transition-all duration-100 ease-out track-glow-red`}
                       style={{ width: `${redisTime}%` }}
@@ -333,10 +334,10 @@ export function HeroSection() {
 
                 {/* Results */}
                 {hasRun && !isRunning && redisTime >= 100 && sqlTime >= 100 && (
-                  <div className="mt-4 pt-4 border-t border-border/30 animate-fade-in">
+                  <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-border/30 animate-fade-in">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">Winner: Redis</span>
-                      <span className="text-sm font-bold text-gradient">
+                      <span className="text-[10px] sm:text-xs text-muted-foreground">Winner: Redis</span>
+                      <span className="text-xs sm:text-sm font-bold text-gradient">
                         ~8x faster
                       </span>
                     </div>
@@ -344,8 +345,8 @@ export function HeroSection() {
                 )}
 
                 {!hasRun && (
-                  <div className="text-center py-4">
-                    <p className="text-xs text-muted-foreground">
+                  <div className="text-center py-3 sm:py-4">
+                    <p className="text-[10px] sm:text-xs text-muted-foreground">
                       Click "Play" to start the race! 🚀
                     </p>
                   </div>
@@ -359,9 +360,9 @@ export function HeroSection() {
       {/* Scroll indicator */}
       <button 
         onClick={() => scrollToSection("backend-showcase")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-pulse"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-pulse hidden sm:block"
       >
-        <ChevronDown className="w-8 h-8" />
+        <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8" />
       </button>
     </section>
   );

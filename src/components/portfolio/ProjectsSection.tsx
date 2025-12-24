@@ -242,18 +242,18 @@ function ExpandedCarousel({
       
       {/* Content */}
       <div 
-        className="relative w-full max-w-[90vw] lg:max-w-[70vw] xl:max-w-[60vw] animate-in zoom-in-95 slide-in-from-bottom-4 duration-300"
+        className="relative w-full max-w-[95vw] sm:max-w-[90vw] lg:max-w-[70vw] xl:max-w-[60vw] animate-in zoom-in-95 slide-in-from-bottom-4 duration-300 px-2 sm:px-0"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-              <project.icon className="w-5 h-5 text-foreground" />
+        <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${project.gradient} flex items-center justify-center flex-shrink-0`}>
+              <project.icon className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
             </div>
-            <div>
-              <h3 className="font-semibold text-lg text-foreground">{project.title}</h3>
-              <p className="text-sm text-muted-foreground">{project.subtitle}</p>
+            <div className="min-w-0">
+              <h3 className="font-semibold text-sm sm:text-lg text-foreground truncate">{project.title}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground truncate">{project.subtitle}</p>
             </div>
           </div>
           
@@ -262,9 +262,9 @@ function ExpandedCarousel({
             variant="outline"
             size="icon"
             onClick={onClose}
-            className="rounded-full bg-background/80 backdrop-blur-sm border-primary/30 hover:bg-destructive/20 hover:border-destructive/50 hover:text-destructive transition-all duration-200"
+            className="rounded-full bg-background/80 backdrop-blur-sm border-primary/30 hover:bg-destructive/20 hover:border-destructive/50 hover:text-destructive transition-all duration-200 w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
         </div>
         
@@ -285,13 +285,13 @@ function ExpandedCarousel({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4 h-12 w-12 bg-background/90 backdrop-blur-sm hover:bg-background border-primary/30 hover:border-primary transition-all duration-200" />
-            <CarouselNext className="right-4 h-12 w-12 bg-background/90 backdrop-blur-sm hover:bg-background border-primary/30 hover:border-primary transition-all duration-200" />
+            <CarouselPrevious className="left-2 sm:left-4 h-8 w-8 sm:h-12 sm:w-12 bg-background/90 backdrop-blur-sm hover:bg-background border-primary/30 hover:border-primary transition-all duration-200" />
+            <CarouselNext className="right-2 sm:right-4 h-8 w-8 sm:h-12 sm:w-12 bg-background/90 backdrop-blur-sm hover:bg-background border-primary/30 hover:border-primary transition-all duration-200" />
           </Carousel>
           
           {/* Page indicator */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/30">
-            <span className="text-sm font-medium text-foreground">
+          <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 bg-background/90 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-primary/30">
+            <span className="text-xs sm:text-sm font-medium text-foreground">
               <span className="text-primary font-bold">{current + 1}</span>
               <span className="text-muted-foreground"> / {project.imageCount}</span>
             </span>
@@ -299,22 +299,22 @@ function ExpandedCarousel({
         </div>
         
         {/* Dots indicator */}
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-1.5 sm:gap-2 mt-3 sm:mt-4 flex-wrap px-4">
           {Array.from({ length: project.imageCount }, (_, i) => (
             <button
               key={i}
               onClick={() => api?.scrollTo(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                 i === current 
-                  ? "bg-primary w-6" 
+                  ? "bg-primary w-4 sm:w-6" 
                   : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
               }`}
             />
           ))}
         </div>
         
-        {/* Keyboard hint */}
-        <p className="text-center text-xs text-muted-foreground mt-4">
+        {/* Keyboard hint - hidden on mobile */}
+        <p className="hidden sm:block text-center text-xs text-muted-foreground mt-4">
           Press <kbd className="px-1.5 py-0.5 bg-muted rounded text-primary">←</kbd> <kbd className="px-1.5 py-0.5 bg-muted rounded text-primary">→</kbd> to navigate • <kbd className="px-1.5 py-0.5 bg-muted rounded text-primary">ESC</kbd> to close
         </p>
       </div>
@@ -334,18 +334,18 @@ export function ProjectsSection() {
   }, []);
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 bg-card/30">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-card/30">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
             <span className="text-gradient">Featured Projects</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             Production-grade applications showcasing backend architecture, security implementation, and scalable design patterns.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div 
               key={project.title}
@@ -361,28 +361,28 @@ export function ProjectsSection() {
                 onExpand={() => handleExpand(project)} 
               />
               
-              <div className="p-6 space-y-4">
+              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                 <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${project.gradient} bg-opacity-20 flex items-center justify-center`}>
-                      <project.icon className="w-5 h-5 text-foreground" />
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${project.gradient} bg-opacity-20 flex items-center justify-center flex-shrink-0`}>
+                      <project.icon className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">{project.title}</h3>
-                      <p className="text-xs text-muted-foreground">{project.subtitle}</p>
+                      <h3 className="font-semibold text-sm sm:text-base">{project.title}</h3>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground">{project.subtitle}</p>
                     </div>
                   </div>
                 </div>
 
                 <p 
-                  className="text-sm text-muted-foreground"
+                  className="text-xs sm:text-sm text-muted-foreground"
                   dangerouslySetInnerHTML={{ __html: highlightKeywords(project.description) }}
                 />
 
                 {/* Highlights */}
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {project.highlights.map((highlight, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs">
+                    <li key={i} className="flex items-start gap-2 text-[10px] sm:text-xs">
                       <Database className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                       <span 
                         className="text-muted-foreground"
@@ -393,25 +393,25 @@ export function ProjectsSection() {
                 </ul>
 
                 {/* Tech stack */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-[9px] sm:text-xs px-1.5 sm:px-2 py-0.5">
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-2 pt-2">
-                  <Button size="sm" variant="outline" className="flex-1" asChild>
+                <div className="flex gap-2 pt-1 sm:pt-2">
+                  <Button size="sm" variant="outline" className="flex-1 text-xs sm:text-sm h-8 sm:h-9" asChild>
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
+                      <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" className="flex-1" asChild>
+                  <Button size="sm" className="flex-1 text-xs sm:text-sm h-8 sm:h-9" asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                       Live
                     </a>
                   </Button>
