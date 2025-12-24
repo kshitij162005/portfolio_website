@@ -166,7 +166,7 @@ function ProjectCarousel({
                 onClick={onExpand}
               >
                 <img
-                  src={`/src/Corousal/${project.carouselFolder}/${i + 1}.png`}
+                  src={`/Corousal/${project.carouselFolder}/${i + 1}.png`}
                   alt={`${project.title} screenshot ${i + 1}`}
                   className="w-full h-full object-cover object-top transition-transform duration-300 group-hover/carousel:scale-105"
                   loading="lazy"
@@ -276,7 +276,7 @@ function ExpandedCarousel({
                 <CarouselItem key={i}>
                   <div className="relative w-full aspect-video bg-muted/30">
                     <img
-                      src={`/src/Corousal/${project.carouselFolder}/${i + 1}.png`}
+                      src={`/Corousal/${project.carouselFolder}/${i + 1}.png`}
                       alt={`${project.title} screenshot ${i + 1}`}
                       className="w-full h-full object-contain"
                       loading="lazy"
