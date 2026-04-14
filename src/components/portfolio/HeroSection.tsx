@@ -133,7 +133,7 @@ export function HeroSection() {
                     </span>
                   </span>
                   {/* Current Badge with blinking dot */}
-                  <Badge 
+                  {/* <Badge 
                     variant="outline" 
                     className="border-primary/50 bg-primary/10 text-primary text-[10px] px-2 py-0.5 h-5 flex items-center gap-1.5"
                   >
@@ -142,7 +142,7 @@ export function HeroSection() {
                       <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary"></span>
                     </span>
                     <span className="font-medium">Current</span>
-                  </Badge>
+                  </Badge> */}
                 </span>
               </div>
               <div className="text-[10px] sm:text-xs text-muted-foreground flex items-center gap-1.5">
