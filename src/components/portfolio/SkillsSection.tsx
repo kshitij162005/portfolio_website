@@ -7,7 +7,7 @@ const skills = {
   frontend: ["React", "Vite", "Tailwind CSS"],
   databases: ["MongoDB", "SQL", "Redis"],
   systems: ["Microservices", "RBAC", "Server-Side Pagination", "REST APIs"],
-  security: ["JWT", "PBKDF2-SHA256", "Cryptographic Hashing", "OWASP Standards", "SHA-256 Salting"],
+  security: ["JWT", "PBKDF2-SHA256", "SHA-256 Salting"],
   devops: ["Git", "Docker", "CI/CD", "Postman", "AWS"],
 };
 
@@ -15,7 +15,7 @@ const experience = [
   {
     title: "Backend Engineer",
     company: "Rolling Arrays (Internship)",
-    period: "May 2025 - Present",
+    period: "May 2025 - April 2026",
     description: "Optimized REST APIs handling 10K+ daily transactions, reducing response time by 30% using Django microservices. Designed validation logic to prevent data loss and duplication, ensuring 99.9% data integrity in SAP SuccessFactors sync.",
     highlights: [
       "Built and maintained scalable microservices architecture using Django, Python, and SQL",
@@ -30,7 +30,7 @@ const education = {
   degree: "B.Tech (Software Product Engineering)",
   institution: "MIT-ADT (Pune) x Kalvium",
   period: "2023 - 2027",
-  gpa: "8.40/10",
+  gpa: "8.49/10",
 };
 
 export function SkillsSection() {

@@ -86,7 +86,7 @@ const projects = [
       "Implemented PBKDF2-SHA256 authentication (100K iterations, 128-bit salt) exceeding OWASP standards",
       "Built a finite state machine for hospital approval workflow (PENDING → APPROVED/REJECTED) with MongoDB transactions",
     ],
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "Redis", "Role-Based Access Control (RBAC)", "Server-Side Pagination", "Cryptographic Hashing"],
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "Redis", "Role-Based Access Control (RBAC)", "Server-Side Pagination"],
     icon: Shield,
     gradient: "from-primary to-primary/50",
     liveUrl: "https://g1card.vercel.app",

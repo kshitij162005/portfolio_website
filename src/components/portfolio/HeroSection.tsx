@@ -148,7 +148,7 @@ export function HeroSection() {
               <div className="text-[10px] sm:text-xs text-muted-foreground flex items-center gap-1.5">
                 <span className="text-primary/70 font-medium">May 2025</span>
                 <span className="text-muted-foreground/50">—</span>
-                <span className="text-primary font-medium">Present</span>
+                <span className="text-primary font-medium">April 2026</span>
               </div>
             </div>
           </div>
@@ -175,10 +175,10 @@ export function HeroSection() {
               <div className="text-xl sm:text-2xl font-bold text-gradient">99.9%</div>
               <div className="text-[10px] sm:text-xs text-muted-foreground">Data Integrity</div>
             </div>
-            <div className="glass rounded-lg px-3 sm:px-4 py-2.5 sm:py-3">
+            {/* <div className="glass rounded-lg px-3 sm:px-4 py-2.5 sm:py-3">
               <div className="text-xl sm:text-2xl font-bold text-gradient">85%</div>
               <div className="text-[10px] sm:text-xs text-muted-foreground">Query Time Reduced</div>
-            </div>
+            </div> */}
           </div>
 
           {/* CTA buttons */}
