@@ -1,15 +1,32 @@
 import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-const skills = {
-  languages: ["Python", "JavaScript", "Java"],
-  backend: ["Django", "Django REST Framework", "Node.js", "Express"],
-  frontend: ["React", "Vite", "Tailwind CSS"],
-  databases: ["MongoDB", "SQL", "Redis"],
-  systems: ["Microservices", "RBAC", "Server-Side Pagination", "REST APIs"],
-  security: ["JWT", "PBKDF2-SHA256", "SHA-256 Salting"],
-  devops: ["Git", "Docker", "CI/CD", "Postman", "AWS"],
-};
+const skills = [
+  {
+    label: "Languages",
+    items: ["Python", "JavaScript", "TypeScript"],
+  },
+  {
+    label: "Frontend",
+    items: ["React", "HTML", "CSS", "Vite", "Tailwind CSS"],
+  },
+  {
+    label: "Backend",
+    items: ["Django", "Django REST Framework", "Node.js", "Express.js"],
+  },
+  {
+    label: "Databases",
+    items: ["MongoDB", "MySQL", "PostgreSQL"],
+  },
+  {
+    label: "Systems",
+    items: ["Microservices", "REST APIs", "RBAC (Role based access control)", "Server Side Pagination"],
+  },
+  {
+    label: "DevOps / Tools",
+    items: ["Git", "Postman", "GitHub Actions", "AWS", "JWT", "Jira"],
+  },
+];
 
 const experience = [
   {
@@ -116,14 +133,14 @@ export function SkillsSection() {
               <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
                 <span className="text-primary font-mono text-xs sm:text-sm">&lt;/&gt;</span>
               </div>
-              Technical Stack
+              Technical Skills
             </h3>
 
             <div className="space-y-3 sm:space-y-4">
-              {Object.entries(skills).map(([category, items]) => (
-                <div key={category} className="glass rounded-lg p-3 sm:p-4">
+              {skills.map(({ label, items }) => (
+                <div key={label} className="glass rounded-lg p-3 sm:p-4">
                   <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mb-2 sm:mb-3">
-                    {category.replace(/([A-Z])/g, ' $1').trim()}
+                    {label}
                   </div>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {items.map((skill) => (
